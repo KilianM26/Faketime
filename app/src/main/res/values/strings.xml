@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Faketime</string>
+    <string name="connectBluetooth">Connect</string>
 </resources>
