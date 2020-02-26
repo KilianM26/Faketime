@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //connects the devices through Bluetooth
         Button connectBluetooth = (Button) findViewById(R.id.connectBluetoothButton);
         connectBluetooth.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,8 +26,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //switches to the Camera Preview page
+        Button cameraPreview = (Button) findViewById(R.id.cameraButton);
+        cameraPreview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.camera_preview);
+            }
+        });
+
+
     }
 
+    //Connects the devices
     public void connectBluetooth(){
 
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -37,4 +49,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+
 }
