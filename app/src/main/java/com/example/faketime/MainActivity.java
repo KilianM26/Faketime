@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         cameraPreview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setContentView(R.layout.camera_preview);
 
                 Intent camera = new Intent(MainActivity.this, CameraPreview.class);
                 MainActivity.this.startActivity(camera);
