@@ -9,7 +9,6 @@
         android:layout_height="match_parent"></VideoView>
 
     <Button
-        android:layout_
         android:layout_width="50dp"
         android:layout_height="50dp"/>
 
