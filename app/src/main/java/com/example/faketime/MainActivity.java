@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent camera = new Intent(MainActivity.this, CameraPreview.class);
+                Intent camera = new Intent(MainActivity.this, CallPage.class);
                 MainActivity.this.startActivity(camera);
 
             }

@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".CameraPreview" android:icon="@mipmap/ic_launcher">
+        <activity android:name=".CallPage" android:icon="@mipmap/ic_launcher">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.CALL"/>-->
 <!--            </intent-filter>-->
