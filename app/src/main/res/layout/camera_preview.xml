@@ -7,27 +7,31 @@
     <VideoView
         android:id="@+id/VideoView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></VideoView>
+        android:layout_height="match_parent"
+        >
+    </VideoView>
 
-    <!--TODO change color so you can see if it actually exists-->
     <VideoView
         android:id="@+id/VideoPreview"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="20dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp"/>
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/colorPrimary">
+
+    </VideoView>
 
     <ImageButton
         android:id="@+id/EndCall"
-        android:background="@drawable/end_call_button"
-        android:foreground="@android:drawable/ic_menu_call"
         android:layout_width="65dp"
         android:layout_height="65dp"
+        android:background="@drawable/end_call_button"
+        android:contentDescription="@string/end_call"
+        android:foreground="@android:drawable/ic_menu_call"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
-        android:contentDescription="@string/end_call" />
+        android:layout_marginBottom="30dp"/>
 
 </RelativeLayout>
