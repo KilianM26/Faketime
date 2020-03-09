@@ -14,6 +14,12 @@ public class Settings extends AppCompatActivity {
     }
 
     CheckBox darkMode = (CheckBox) findViewById(R.id.darkMode);
-    darkMode.setOnCheckChangeListener();
+    darkMode.OnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+        @Override
+        public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+        }
+    });
 
 }
