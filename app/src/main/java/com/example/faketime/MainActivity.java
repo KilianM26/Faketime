@@ -17,12 +17,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //connects the devices through Bluetooth
-        Button connectBluetooth = (Button) findViewById(R.id.connectBluetoothButton);
-        connectBluetooth.setOnClickListener(new View.OnClickListener() {
+        Button settings = (Button) findViewById(R.id.settings_button);
+        settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                connectBluetooth();
+
             }
         });
 
@@ -37,20 +36,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
-    }
-
-    //Connects the devices
-    public void connectBluetooth(){
-
-        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-
-        if (!bluetoothAdapter.isEnabled()) {
-            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(enableBtIntent, 1);
-        }
-
 
 
     }

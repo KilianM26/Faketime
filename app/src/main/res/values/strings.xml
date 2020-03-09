@@ -1,9 +1,17 @@
 <resources>
+
+<!--    main activity-->
     <string name="app_name">Faketime</string>
     <string name="connectBluetooth">Connect</string>
     <string name="sendButton">Send</string>
     <string name="receivedMessage">Recieved</string>
     <string name="sendMessage">Message</string>
     <string name="cameraButton">Go to Camera</string>
+
+<!--    call Page-->
     <string name="end_call">Ends the call and disconnects the users</string>
+
+<!--    Settings Page-->
+    <string name="darkModeButton">Dark Mode</string>
+
 </resources>
