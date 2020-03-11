@@ -1,5 +1,6 @@
 package com.example.faketime;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,23 +13,28 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Settings extends AppCompatActivity {
 
-    SharedPreferences mPrefs = getSharedPreferences("state", 0);
-    String theme = mPrefs.getString("theme", "light");
-    SharedPreferences.Editor mEdit = mPrefs.edit();
-    Boolean checkTheme = mPrefs.getBoolean("checkTheme", false);
+    SharedPreferences mPrefs;
+    String theme;
+    SharedPreferences.Editor mEdit;
+    Boolean checkTheme;
 
     View settings, home;
     private static final String TAG = "asdfgh";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        if(theme == "light"){
-            setTheme(R.style.Light);
-        }else{
-            setTheme(R.style.Dark);
-        }
+        mPrefs = getSharedPreferences("state", 0);
+        theme = mPrefs.getString("theme", "light");
+        mEdit = mPrefs.edit();
+        checkTheme = mPrefs.getBoolean("checkTheme", false);
+
 
         super.onCreate(savedInstanceState);
+        if(theme == "dark"){
+            setTheme(R.style.Dark);
+        }else{
+            setTheme(R.style.Light);
+        }
         setContentView(R.layout.settings);
 
         settings = findViewById(R.id.Settings_Screen);
@@ -36,6 +42,7 @@ public class Settings extends AppCompatActivity {
 
         final CheckBox darkMode = (CheckBox) findViewById(R.id.darkMode);
         darkMode.setChecked(checkTheme);
+        mEdit.apply();
 
         darkMode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -43,17 +50,27 @@ public class Settings extends AppCompatActivity {
                 if(darkMode.isChecked()){
                     mEdit.putString("theme", "dark");
                     mEdit.putBoolean("checkTheme", true);
-                    Log.v(TAG, "changed theme to dark");
-                    setContentView(R.layout.settings);
-                    Log.v(TAG, "set the content view thingamajig");
+                    mEdit.apply();
+                    Log.v(TAG, "changing theme to dark");
+                    Log.v(TAG, mPrefs.getString("theme", "light"));
+
+                    Intent settings = new Intent(Settings.this, Settings.class);
+                    Settings.this.startActivity(settings);
                 }else{
                     mEdit.putString("theme", "light");
-                    mEdit.putBoolean("checkTheme", true);
+                    mEdit.apply();
                     Log.v(TAG, "changed theme to light");
-                    setContentView(R.layout.settings);
+
+                    Intent settings = new Intent(Settings.this, Settings.class);
+                    Settings.this.startActivity(settings);
                 }
             }
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent mainActivity = new Intent(Settings.this, MainActivity.class);
+        Settings.this.startActivity(mainActivity);
+    }
 }

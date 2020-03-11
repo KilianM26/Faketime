@@ -10,16 +10,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    SharedPreferences mPrefs = getSharedPreferences("state", 0);
-    String theme = mPrefs.getString("theme", "light");
-    SharedPreferences.Editor mEdit = mPrefs.edit();
+    SharedPreferences mPrefs;
+    String theme;
+    SharedPreferences.Editor mEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        if(theme == "light"){
-            setTheme(R.style.Light);
-        }else{
+        mPrefs = getSharedPreferences("state", 0);
+        theme = mPrefs.getString("theme", "light");
+        mEdit = mPrefs.edit();
+
+        if(theme == "dark"){
             setTheme(R.style.Dark);
+        }else{
+            setTheme(R.style.Light);
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
