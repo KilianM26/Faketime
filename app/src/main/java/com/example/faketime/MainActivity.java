@@ -1,7 +1,7 @@
 package com.example.faketime;
 
-import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,10 +10,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    public BluetoothAdapter bluetoothAdapter = null;
+    SharedPreferences mPrefs = getSharedPreferences("state", 0);
+    String theme = mPrefs.getString("theme", "light");
+    SharedPreferences.Editor mEdit = mPrefs.edit();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if(theme == "light"){
+            setTheme(R.style.Light);
+        }else{
+            setTheme(R.style.Dark);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
