@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="hangUpButton">#ff0000</color>
+    <color name="light_mode_background">#eeeeee</color>
+    <color name="dark_mode_background">#121212</color>
 </resources>
