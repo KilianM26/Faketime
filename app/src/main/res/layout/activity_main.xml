@@ -7,8 +7,9 @@
     tools:context=".MainActivity"
     android:id="@+id/Main_Screen">
 
+    //Button to initiate connections
     <Button
-        android:id="@+id/connectBluetoothButton"
+        android:id="@+id/connectButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
@@ -17,6 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    //Shows message received from the other person (after connecting)
     <TextView
         android:id="@+id/receivedMessage"
         android:layout_width="wrap_content"
@@ -27,6 +29,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sendButton" />
 
+    //Sends a message to the other person
     <Button
         android:id="@+id/sendButton"
         android:layout_width="wrap_content"
@@ -38,6 +41,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sendEditText" />
 
+    //Where you type your message
     <EditText
         android:id="@+id/sendEditText"
         android:layout_width="wrap_content"
@@ -48,9 +52,10 @@
         android:inputType="textShortMessage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/connectBluetoothButton"
+        app:layout_constraintTop_toBottomOf="@+id/connectButton"
         android:autofillHints="" />
 
+    //Takes you to the camera page
     <Button
         android:id="@+id/cameraButton"
         android:layout_width="wrap_content"
@@ -62,6 +67,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
+    //Brings you to settings
     <Button
         android:id="@+id/settings_button"
         style="@style/Widget.AppCompat.Button.Borderless"
@@ -69,7 +75,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/settings_icon"
+        android:background="@drawable/settings_icon_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

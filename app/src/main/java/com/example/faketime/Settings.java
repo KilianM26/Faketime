@@ -3,7 +3,6 @@ package com.example.faketime;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -51,16 +50,13 @@ public class Settings extends AppCompatActivity {
                     mEdit.putString("theme", "dark");
                     mEdit.putBoolean("checkTheme", true);
                     mEdit.apply();
-                    Log.v(TAG, "changing theme to dark");
-                    Log.v(TAG, mPrefs.getString("theme", "light"));
 
                     Intent settings = new Intent(Settings.this, Settings.class);
                     Settings.this.startActivity(settings);
                 }else{
                     mEdit.putString("theme", "light");
+                    mEdit.putBoolean("checkTheme", false);
                     mEdit.apply();
-                    Log.v(TAG, "changed theme to light");
-
                     Intent settings = new Intent(Settings.this, Settings.class);
                     Settings.this.startActivity(settings);
                 }

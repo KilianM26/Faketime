@@ -25,6 +25,12 @@
         <item name="android:windowBackground">@color/dark_mode_background</item>
         <item name="android:navigationBarColor">@android:color/black</item>
         <item name="android:textColorHint">@color/light_mode_background</item>
+        <item name="checkboxStyle">@style/customCheckBoxStyle</item>
+    </style>
+    
+    <style name="customCheckBoxStyle" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:textColor">@color/dark_mode_text</item>
+        <item name="buttonTint">@color/dark_mode_text</item>
     </style>
 
 </resources>
