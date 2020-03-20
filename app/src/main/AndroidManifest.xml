@@ -18,20 +18,26 @@
         android:supportsRtl="true"
         android:theme="@style/Light">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".CallPage" android:icon="@mipmap/ic_launcher">
+        <activity android:name=".CallPage" android:icon="@mipmap/ic_launcher" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
 
-        <activity android:name=".Settings" android:icon="@mipmap/ic_launcher">
+        <activity android:name=".Settings" android:icon="@mipmap/ic_launcher" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".Messages" android:icon="@mipmap/ic_launcher" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action"/>
             </intent-filter>

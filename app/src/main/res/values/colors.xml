@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+
+    <!--    Light Mode-->
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
+    <color name="light_mode_background">#eeeeee</color>
+
+
+    <!--    Dark Mode-->
     <color name="dark_colorPrimaryDark">#1f1b24</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="hangUpButton">#ff0000</color>
-    <color name="light_mode_background">#eeeeee</color>
     <color name="dark_mode_background">#3a3a3a</color>
     <color name="dark_mode_text">#aaaaaa</color>
+
+
+    <!--    Main Activity-->
+    <color name="CallPageButton">#30f030</color>
+    <color name="MessagePageButton">#3060ff</color>
+
+
+    <!--    Call Page-->
+    <color name="hangUpButton">#ff0000</color>
+
+
+    <!--    Settings Page-->
+
+
+    <!--    Messaging Page-->
+    <color name="editTextBackground">#888888</color>
+
+
+
+
 </resources>
