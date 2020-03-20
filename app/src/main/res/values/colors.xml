@@ -8,4 +8,6 @@
     <color name="light_mode_background">#eeeeee</color>
     <color name="dark_mode_background">#3a3a3a</color>
     <color name="dark_mode_text">#aaaaaa</color>
+    <color name="CallPageButton">#30f030</color>
+    <color name="MessagePageButton">#2050ff</color>
 </resources>

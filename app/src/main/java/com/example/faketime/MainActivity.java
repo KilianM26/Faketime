@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         mEdit = mPrefs.edit();
         Log.v(TAG, theme);
 
-        if(theme == "dark"){
+        if(theme.equals("dark")){
             setTheme(R.style.Dark);
         }else{
             setTheme(R.style.Light);
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button settingsButton = (Button) findViewById(R.id.settings_button);
-        if (theme == "dark"){
+        if (theme.equals("dark")){
             settingsButton.setBackgroundResource(R.drawable.settings_icon_dark);
         }else{
             settingsButton.setBackgroundResource(R.drawable.settings_icon_light);
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //switches to the Camera Preview page
-        Button cameraPreview = (Button) findViewById(R.id.cameraButton);
+        Button cameraPreview = (Button) findViewById(R.id.cameraPageButton);
         cameraPreview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -29,7 +29,7 @@ public class Settings extends AppCompatActivity {
 
 
         super.onCreate(savedInstanceState);
-        if(theme == "dark"){
+        if(theme.equals("dark")){
             setTheme(R.style.Dark);
         }else{
             setTheme(R.style.Light);

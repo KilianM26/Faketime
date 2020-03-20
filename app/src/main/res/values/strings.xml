@@ -6,9 +6,10 @@
     <string name="sendButton">Send</string>
     <string name="receivedMessage">Received</string>
     <string name="sendMessage">Message</string>
-    <string name="cameraButton">Go to Camera</string>
+    <string name="cameraPageButton">Video Call</string>
+    <string name="messagePageButton">Messages</string>
 
-<!--    call Page-->
+    <!--    call Page-->
     <string name="end_call">Ends the call and disconnects the users</string>
 
 <!--    Settings Page-->
