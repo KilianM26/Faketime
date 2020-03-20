@@ -4,7 +4,7 @@
     <string name="app_name">Faketime</string>
     <string name="connectBluetooth">Connect</string>
     <string name="sendButton">Send</string>
-    <string name="receivedMessage">Recieved</string>
+    <string name="receivedMessage">Received</string>
     <string name="sendMessage">Message</string>
     <string name="cameraButton">Go to Camera</string>
 
