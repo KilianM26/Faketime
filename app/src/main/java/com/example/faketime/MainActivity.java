@@ -3,7 +3,6 @@ package com.example.faketime;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -21,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         mPrefs = getSharedPreferences("state", 0);
         theme = mPrefs.getString("theme", "light");
         mEdit = mPrefs.edit();
-        Log.v(TAG, theme);
 
         if(theme.equals("dark")){
             setTheme(R.style.Dark);
@@ -49,13 +47,24 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //switches to the Camera Preview page
-        Button cameraPreview = (Button) findViewById(R.id.cameraPageButton);
-        cameraPreview.setOnClickListener(new View.OnClickListener() {
+        Button cameraPage = (Button) findViewById(R.id.cameraPageButton);
+        cameraPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent camera = new Intent(MainActivity.this, CallPage.class);
                 MainActivity.this.startActivity(camera);
+
+            }
+        });
+
+        Button messagePage = (Button) findViewById(R.id.messagePageButton);
+        messagePage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent messages = new Intent(MainActivity.this, Messages.class);
+                MainActivity.this.startActivity(messages);
 
             }
         });
