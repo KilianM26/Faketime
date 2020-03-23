@@ -33,4 +33,10 @@
         <item name="buttonTint">@color/dark_mode_text</item>
     </style>
 
+    <style name="MainActivityButtons" parent="TextAppearance.AppCompat">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
 </resources>

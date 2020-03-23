@@ -18,21 +18,31 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:id="@+id/cameraPageButton"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:text="@string/cameraPageButton"
+        android:fontFamily="@font/helvetica_neue"
+        android:textStyle="normal"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:backgroundTint="@color/CallPageButton"/>
+        android:background="@color/CallPageButton"/>
 
     <Button
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:id="@+id/messagePageButton"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:backgroundTint="@color/MessagePageButton"
+        android:background="@color/MessagePageButton"
         android:text="@string/messagePageButton"
+        android:fontFamily="@font/helvetica_neue"
+        android:textStyle="normal"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toTopOf="@id/cameraPageButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
