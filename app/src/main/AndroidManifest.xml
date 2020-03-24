@@ -43,6 +43,12 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".Intro" android:icon="@mipmap/ic_launcher" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action"/>
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

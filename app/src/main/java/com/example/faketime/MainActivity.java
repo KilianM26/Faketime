@@ -11,16 +11,19 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences mPrefs;
-    String theme;
     SharedPreferences.Editor mEdit;
+    String theme;
+    boolean firstLaunch = true;
     private static final String TAG = "asdfgh";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mPrefs = getSharedPreferences("state", 0);
-        theme = mPrefs.getString("theme", "light");
         mEdit = mPrefs.edit();
+        theme = mPrefs.getString("theme", "light");
+        firstLaunch = mPrefs.getBoolean("firstLaunch", true);
 
+        //Sets the theme
         if(theme.equals("dark")){
             setTheme(R.style.Dark);
         }else{
@@ -28,8 +31,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
         super.onCreate(savedInstanceState);
+
+        //Checks if it's the user's first time launching the app
+        if(firstLaunch){
+            Intent intro = new Intent(MainActivity.this, Intro.class);
+            MainActivity.this.startActivity(intro);
+;        }
         setContentView(R.layout.activity_main);
 
+        //Settings button
         Button settingsButton = (Button) findViewById(R.id.settings_button);
         if (theme.equals("dark")){
             settingsButton.setBackgroundResource(R.drawable.settings_icon_dark);
@@ -46,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //switches to the Camera Preview page
+        //Video call page button
         Button cameraPage = (Button) findViewById(R.id.cameraPageButton);
         cameraPage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Message page button
         Button messagePage = (Button) findViewById(R.id.messagePageButton);
         messagePage.setOnClickListener(new View.OnClickListener() {
             @Override

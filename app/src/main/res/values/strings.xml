@@ -18,4 +18,10 @@
     <!--    Messaging Page-->
     <string name="messageHint">Enter your Message</string>
 
+    <!--    Intro Page-->
+    <string name="introButton">I Understand And Will Not Complain</string>
+    <string name="introMessage">
+        <p>Before you get your mind blown by this incredible app, keep in mind this is was put together in a few weeks, and as such is prone to have bugs and other issues.</p>
+    </string>
+
 </resources>
