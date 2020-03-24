@@ -27,7 +27,7 @@
         android:id="@+id/EndCall"
         android:layout_width="65dp"
         android:layout_height="65dp"
-        android:background="@drawable/end_call_button"
+        android:background="@drawable/red_circle"
         android:contentDescription="@string/end_call"
         android:foreground="@android:drawable/ic_menu_call"
         android:layout_centerHorizontal="true"
