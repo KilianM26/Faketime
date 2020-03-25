@@ -49,6 +49,18 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".AddContact" android:icon="@mipmap/ic_launcher" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".Main_Updated" android:icon="@mipmap/ic_launcher" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action"/>
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
