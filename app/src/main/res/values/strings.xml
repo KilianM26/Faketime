@@ -9,19 +9,24 @@
     <string name="cameraPageButton">Video Call</string>
     <string name="messagePageButton">Messages</string>
 
-    <!--    Call Page-->
+<!--    Call Page-->
     <string name="end_call">Ends the call and disconnects the users</string>
 
-    <!--    Settings Page-->
+<!--    Settings Page-->
     <string name="darkModeButton">Dark Mode</string>
 
-    <!--    Messaging Page-->
+<!--    Messaging Page-->
     <string name="messageHint">Enter your Message</string>
 
-    <!--    Intro Page-->
+<!--    Intro Page-->
     <string name="introButton">I Understand And Will Not Complain</string>
     <string name="introMessage">
         <p>Before you get your mind blown by this incredible app, keep in mind this is was put together in a few weeks, and as such is prone to have bugs and other issues.</p>
     </string>
+
+<!--    Add Contact-->
+    <string name="addContactName">Name</string>
+    <string name="addContactIP">IP or whatever we decide to use</string>
+    <string name="submitContact">Submit</string>
 
 </resources>

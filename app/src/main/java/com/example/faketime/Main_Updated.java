@@ -11,6 +11,7 @@ import com.google.gson.Gson;
 import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class Main_Updated extends AppCompatActivity {
 
@@ -19,7 +20,7 @@ public class Main_Updated extends AppCompatActivity {
 
     Gson gson = new Gson();
     String json;
-    List contacts;
+    List<String[]> contacts;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -39,6 +40,11 @@ public class Main_Updated extends AppCompatActivity {
                 Main_Updated.this.startActivity(addContact);
             }
         });
+
+        ConstraintLayout layout;
+        for(Object cur: contacts){
+            layout = new ConstraintLayout(this);
+        }
 
 
     }
