@@ -14,7 +14,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,7 +25,7 @@ public class Main_Updated extends AppCompatActivity {
 
     Gson gson = new Gson();
     String json;
-    List<String[]> contacts;
+    ArrayList<String> contacts;
     String theme;
 
     @Override
@@ -35,6 +34,7 @@ public class Main_Updated extends AppCompatActivity {
         mPrefs = getSharedPreferences("state", 0);
         mEdit = mPrefs.edit();
         json = mPrefs.getString("contacts", "");
+        Log.v(TAG, json);
         contacts = gson.fromJson(json, ArrayList.class);
         theme = mPrefs.getString("theme", "light");
 
@@ -60,16 +60,15 @@ public class Main_Updated extends AppCompatActivity {
 
         LinearLayout insideScroll = findViewById(R.id.scrollViewInternal);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        TextView contactName = new TextView(this);
-        contactName.setLayoutParams(params);
         Button callContact = new Button(this);
         Button messageContact = new Button(this);
         params.setMarginEnd(100);
+        int editTextNum = 0;
         if(!(contacts == null)) {
-            Log.v(TAG, "Contacts aren't null");
-            for (String[] cur : contacts) {
-                contactName.setText(cur[0]);
-                Log.v(TAG, "Contact Name is " + contactName);
+            for (String cur: contacts) {
+                TextView contactName = new TextView(this);
+                contactName.setLayoutParams(params);
+                contactName.setText(cur);
                 insideScroll.addView(contactName);
                 Log.v(TAG, "Added TextView to LinearLayout");
             }

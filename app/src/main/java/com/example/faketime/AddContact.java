@@ -11,7 +11,6 @@ import android.widget.EditText;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,8 +21,8 @@ public class AddContact extends AppCompatActivity {
 
     Gson gson = new Gson();
     String json;
-    List<String[]> contacts;
-    String[] curContact = new String[2];
+    ArrayList<String> contacts;
+    String curContact = "";
     String theme;
     private static final String TAG = "asdfgh";
 
@@ -32,11 +31,11 @@ public class AddContact extends AppCompatActivity {
 
         mPrefs = getSharedPreferences("state", 0);
         mEdit = mPrefs.edit();
-        json = mPrefs.getString("MyObject", "");
+        json = mPrefs.getString("contacts", "");
         theme = mPrefs.getString("theme", "light");
-        contacts = gson.fromJson(json, List.class);
+        contacts = gson.fromJson(json, ArrayList.class);
         if(contacts == null){
-            contacts = new ArrayList<String[]>();
+            contacts = new ArrayList<String>();
         }
 
         //Sets the theme
@@ -55,14 +54,14 @@ public class AddContact extends AppCompatActivity {
         submitContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                curContact[0] = contactName.getText().toString();
-                curContact[1] = contactAddress.getText().toString();
+                String contactNameString = contactName.getText().toString();
+                String contactAddressString = contactAddress.getText().toString();
+                curContact = contactNameString + "/" + contactAddressString;
                 contacts.add(curContact);
 
-                Log.v(TAG, "Added name to contacts");
-                Log.v(TAG, "contacts[0] is " + curContact[0]);
+                Log.v(TAG, "Contacts is" + contacts.toString());
 
-                json = gson.toJson(curContact);
+                json = gson.toJson(contacts);
                 Log.v(TAG, "json is " + json);
                 mEdit.putString("contacts", json);
                 mEdit.apply();
