@@ -38,7 +38,6 @@ public class Main_Updated extends AppCompatActivity {
         contacts = gson.fromJson(json, ArrayList.class);
         theme = mPrefs.getString("theme", "light");
 
-
         //Sets the theme
         if(theme.equals("dark")){
             setTheme(R.style.Dark);
@@ -58,19 +57,51 @@ public class Main_Updated extends AppCompatActivity {
             }
         });
 
-        LinearLayout insideScroll = findViewById(R.id.scrollViewInternal);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        Button callContact = new Button(this);
-        Button messageContact = new Button(this);
-        params.setMarginEnd(100);
-        int editTextNum = 0;
+        LinearLayout mainScroll = findViewById(R.id.scrollViewInternal);
+        LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        LinearLayout.LayoutParams buttonParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        textParams.setMarginEnd(100);
+
         if(!(contacts == null)) {
-            for (String cur: contacts) {
-                TextView contactName = new TextView(this);
-                contactName.setLayoutParams(params);
+            for (final String cur: contacts) {
+
+                LinearLayout insideScroll = new LinearLayout(this);
+                final TextView contactName = new TextView(this);
+                String[] split = cur.split("/");
+                final String name = split[0];
+                final String address = split[1];
+
+                Button callContact = new Button(this);
+                Button messageContact = new Button(this);
+                callContact.setLayoutParams(buttonParams);
+                messageContact.setLayoutParams(buttonParams);
+                callContact.setBackground(getResources().getDrawable(R.drawable.video_call_black));
+                messageContact.setBackground(getResources().getDrawable(R.drawable.message_black));
+                callContact.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent callContact = new Intent(Main_Updated.this, CallPage.class);
+                        callContact.putExtra("contact", cur);
+                        Main_Updated.this.startActivity(callContact);
+                    }
+                });
+                messageContact.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent messageContact = new Intent(Main_Updated.this, Messages.class);
+                        messageContact.putExtra("contact", cur);
+                        Main_Updated.this.startActivity(messageContact);
+                    }
+                });
+
+                insideScroll.setOrientation(LinearLayout.HORIZONTAL);
+                contactName.setLayoutParams(textParams);
+                contactName.setTextAppearance(R.style.contactTextView);
                 contactName.setText(cur);
                 insideScroll.addView(contactName);
-                Log.v(TAG, "Added TextView to LinearLayout");
+                insideScroll.addView(callContact);
+                insideScroll.addView(messageContact);
+                mainScroll.addView(insideScroll);
             }
         }else{
             Log.v(TAG, "Contacts ARE null");
